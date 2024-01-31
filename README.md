@@ -9,3 +9,7 @@ echo 'ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}
     } else {
         fprintf(stderr, "Error writing data to FTDI: %s\n", ftdi_get_error_string(&ctx));
     }
+
+
+const unsigned char constData[] = "Hello, FTDI!";
+unsigned char* nonConstData = const_cast<unsigned char*>(constData);
